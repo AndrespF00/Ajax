@@ -1,6 +1,6 @@
 <?php
 
-    $connetion = mysqli_connect(
+    $conn = mysqli_connect(
         'localhost',
         'root',
         '',
@@ -8,8 +8,8 @@
 
     );
 
-    if($connetion)  {
-        echo "Database is connect";
-    }
+    // if($connetion)  {
+    //     echo "Database is connect";
+    // }
 
 ?>

@@ -4,10 +4,11 @@
     $search = $_POST['search'];
 
     if(!empty($search)){
-        $query = "SELECT * FROM task WHERE name LIKE 'search%'";
-        $result = mysqli_query($connetion, $query);
+        require 'database.php';
+        $query = "SELECT * FROM task WHERE name LIKE '$search%'";
+        $result = mysqli_query($conn, $query);
         if(!$result){
-            die('Query Error'. mysqli_error($connetion));
+            die('Query Error'. mysqli_error($conn));
         }
         
         $json = array();

@@ -4,29 +4,65 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://bootswatch.com/5/quartz/bootstrap.css">
+    <title>task</title>
 </head>
 <body>
     
-    <button onclick="sedRequest()">
-        send Ajax request
-    </button>
 
-    <h1 id="title"></h1>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a href="#" class="navbar-brand">TASK APP</a>
+        <ul class="navbar-nav ml-auto">
+            <form class="d-flex">
 
-    <script>
-        function sedRequest() 
-        {
-            var theObjet = new XMLHttpRequest();
-            theObjet.open('POST','backend.php', true);
-            theObjet.setRequestHeader('Content-Type','application/x-www-from-urlencoded');
-            theObjet.onreadystatechange = function ()
-                {
-                    document.getElementById('title').innerHTML = theObjet.responseText;
-                }
-           theObjet.send('username=Hola');
-        }
-    </script>
+                <input type="search" id="search" class="form-control me-2" placeholder="Search Your Taks">
+                
+                <button class="btn btn-outline-success" type="submit">
+                    search
+                </button>
 
+            </form>
+        </ul>
+    </div>
+</nav>
+
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-doby">
+                    <from id="task-form">
+                        <div class="from-control">
+                            <input type="text" id="name" placeholder="Taks Name" class="form-control">
+                        </div>
+                        <div class="form-control">
+                            <textarea id="description" cols="30" rows="10" class="form-control" placeholder="taks description"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block text-center form-control">
+                            Save Taks
+                        </button>
+                    </from>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-7">
+            <table class="table table-bordered table-sm">
+                <thead>
+                    <tr>
+                        <td>Id</td>
+                        <td>Name</td>
+                        <td>Description</td>
+                    </tr>
+                </thead>
+                <tbody id="tasks"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
 </body>
 </html>

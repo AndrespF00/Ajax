@@ -9,8 +9,8 @@ $(document).ready(function() {
             type: 'POST',
             Date: { search },
             success: function(response){
-                let task = JSON.parse(response);
-                console.log(taks);
+                let tasks = JSON.parse(response);
+                console.log(tasks);
             }
         })
     })

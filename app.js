@@ -10,7 +10,9 @@ $(document).ready(function() {
             Date: { search },
             success: function(response){
                 let tasks = JSON.parse(response);
-                console.log(tasks);
+                tasks.array.forEach(tasks => {
+                    console.log(tasks);
+                });
             }
         })
     })

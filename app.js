@@ -6,6 +6,7 @@ $(function(){
         $.ajax({
             url: 'task-search.php',
             type: 'POST',
+            Date: { search },
             success: function(response){
                 console.log(response);
             }
